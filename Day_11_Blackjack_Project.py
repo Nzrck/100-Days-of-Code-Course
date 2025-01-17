@@ -1,5 +1,15 @@
-import art
 import random
+
+logo = r"""
+.------.            _     _            _    _            _    
+|A_  _ |.          | |   | |          | |  (_)          | |   
+|( \/ ).-----.     | |__ | | __ _  ___| | ___  __ _  ___| | __
+| \  /|K /\  |     | '_ \| |/ _` |/ __| |/ / |/ _` |/ __| |/ /
+|  \/ | /  \ |     | |_) | | (_| | (__|   <| | (_| | (__|   < 
+`-----| \  / |     |_.__/|_|\__,_|\___|_|\_\ |\__,_|\___|_|\_\\
+      |  \/ K|                            _/ |                
+      `------'                           |__/           
+"""
 
 def results(dealer_final_hand, player_final_hand):
     """Checks the final score of player and dealer to determine the winner"""
@@ -28,7 +38,7 @@ def blackjack():
     """Initiates a game of blackjack"""
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
     print("\n" * 20)
-    print(art.logo)
+    print(logo)
 
     dealer_hand = []
     player_hand = []

@@ -1,3 +1,4 @@
+```python
 import art
 import random
 
@@ -77,3 +78,5 @@ while play_blackjack:
         blackjack()
     else:
         play_blackjack = False
+
+```

@@ -28,7 +28,7 @@ def input_validation(user_input, validation_stage):
             if user_input == "easy" or user_input == "hard":
                 return user_input
             else:
-                user_input = input(STR_DICT['difficulty_validation'])
+                user_input = input(STR_DICT['difficulty_validation']).lower()
 
         elif validation_stage == "guess_attempts":
             if not user_input.isnumeric():
@@ -41,7 +41,7 @@ def input_validation(user_input, validation_stage):
             if user_input == "yes" or user_input == "no":
                 return user_input
             else:
-                user_input = input(STR_DICT['conclude_validation'])
+                user_input = input(STR_DICT['conclude_validation']).lower()
 
 def difficulty_selection():
     """Takes user input to select difficulty.

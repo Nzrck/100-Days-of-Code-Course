@@ -6,6 +6,17 @@ coffee_machine = CoffeeMaker()
 menu = Menu()
 payment_processor = MoneyMachine()
 
+def resources_report(_):
+    coffee_machine.report()
+    payment_processor.report()
+
+def coffee_process(input):
+    if menu.find_drink(input):
+        order = menu.find_drink(input)
+        if coffee_machine.is_resource_sufficient(order):
+            if payment_processor.make_payment(order.cost):
+                coffee_machine.make_coffee(order)
+
 def main():
 
     coffee_machine_functions = {
@@ -24,15 +35,5 @@ def main():
         else:
             print("Sorry this item is not available.")
 
-def resources_report(_):
-    coffee_machine.report()
-    payment_processor.report()
-
-def coffee_process(input):
-    if menu.find_drink(input):
-        order = menu.find_drink(input)
-        if coffee_machine.is_resource_sufficient(order):
-            if payment_processor.make_payment(order.cost):
-                coffee_machine.make_coffee(order)
 
 main()

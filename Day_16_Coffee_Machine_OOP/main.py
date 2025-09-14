@@ -11,11 +11,10 @@ def resources_report(_):
     payment_processor.report()
 
 def coffee_process(input):
-    if menu.find_drink(input):
-        order = menu.find_drink(input)
-        if coffee_machine.is_resource_sufficient(order):
-            if payment_processor.make_payment(order.cost):
-                coffee_machine.make_coffee(order)
+    order = menu.find_drink(input)
+    if coffee_machine.is_resource_sufficient(order):
+        if payment_processor.make_payment(order.cost):
+            coffee_machine.make_coffee(order)
 
 def main():
 
@@ -34,6 +33,5 @@ def main():
             coffee_machine_functions[user_input](user_input)
         else:
             print("Sorry this item is not available.")
-
 
 main()
